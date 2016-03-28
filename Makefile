@@ -1,4 +1,4 @@
-LN           = ln -sFn
+LN           = ln -sfFn
 RM           = rm -f
 TMUX_VERSION = $(shell tmux -V | cut -d ' ' -f2)
 OS_NAME      = $(shell uname -s | tr '[:upper:]' '[:lower:]')
