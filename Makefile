@@ -1,4 +1,4 @@
-LN           = ln -srFnb -S .bak
+LN           = ln -sFn
 RM           = rm -f
 TMUX_VERSION = $(shell tmux -V | cut -d ' ' -f2)
 OS_NAME      = $(shell uname -s | tr '[:upper:]' '[:lower:]')
@@ -11,7 +11,7 @@ all: $(FILES)
 
 .PHONY: install
 install: $(FILES)
-	$(LN) $^ $(DEST)
+	$(LN) $(shell realpath --relative-to=$(DEST) $^) $(DEST)
 
 .tmux.conf: $(CONF_SOURCES)
 	cat $^ > $@
