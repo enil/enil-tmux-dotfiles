@@ -3,7 +3,7 @@ RM           = rm -f
 TMUX_VERSION = $(shell tmux -V | cut -d ' ' -f2)
 OS_NAME      = $(shell uname -s | tr '[:upper:]' '[:lower:]')
 FILES        = .tmux.conf
-CONF_SOURCES = $(wildcard .tmux.base.conf .tmux.$(TMUX_VERSION).conf .tmux.$(OS_NAME).conf)
+CONF_SOURCES = $(wildcard tmux.base.conf tmux.$(TMUX_VERSION).conf tmux.$(OS_NAME).conf)
 DEST         = $(HOME)
 
 .PHONY: all
